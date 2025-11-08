@@ -1,17 +1,17 @@
 _format_version: "3.0"
 
 services:
-  - name: gcp-api-backend
+  - name: wajooba-api
     url: https://api.wajooba.me
     connect_timeout: 30000
     write_timeout: 30000
     read_timeout: 30000
 
 routes:
-  - name: snode-route
-    service: gcp-api-backend
-    paths:
-      - "/snode/"
+  - name: catch-all-route
+    service: wajooba-api
+    paths: 
+      - "/"
     methods:
       - GET
       - POST
