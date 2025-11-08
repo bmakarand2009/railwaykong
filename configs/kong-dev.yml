@@ -20,3 +20,12 @@ routes:
       - PATCH
       - OPTIONS
     strip_path: false
+
+plugins:
+  - name: rate-limiting
+    config:
+      minute: 100        # 100 requests per minute
+      hour: 1000         # 1000 requests per hour
+      policy: local      # Use local storage for now
+      fault_tolerant: true
+      hide_client_headers: false
